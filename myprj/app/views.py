@@ -8,6 +8,7 @@ from .serializer import TodoSerializer
 def get_todos(request):
     todos = Todo.objects.all()
     serializer = TodoSerializer(todos, many=True)
+    print(todos)
     return Response(serializer.data)
 
 @api_view(['GET'])
